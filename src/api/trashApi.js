@@ -1,15 +1,8 @@
 import { auth, db } from "../firebase";
-// import { useDispatch } from "react-redux";
-// import { useSelector } from "react-redux";
 
 const trashApi = {
   getTrash: () => {
-    // TODO: Call API to get current user
     return new Promise((resolve, reject) => {
-      // reject(new Error('MY CUSTOM ERROR'));
-      // return;
-
-      // Wait 500ms --> return result
       setTimeout(() => {
         const currentUser = auth.currentUser;
         var a = [];
@@ -31,12 +24,7 @@ const trashApi = {
     });
   },
   addTrash: (newTrash) => {
-    // TODO: Call API to get current user
     return new Promise((resolve, reject) => {
-      // reject(new Error('MY CUSTOM ERROR'));
-      // return;
-
-      // Wait 500ms --> return result
       setTimeout(() => {
         const currentUser = auth.currentUser;
         var a = [];
@@ -68,12 +56,7 @@ const trashApi = {
     });
   },
   deleteTrash: (Trash) => {
-    // TODO: Call API to get current user
     return new Promise((resolve, reject) => {
-      // reject(new Error('MY CUSTOM ERROR'));
-      // return;
-
-      // Wait 500ms --> return result
       setTimeout(() => {
         const currentUser = auth.currentUser;
         var a = [];

@@ -12,8 +12,7 @@ const Login = () => {
       .signInWithEmailAndPassword(data.email, data.password)
       .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log("ok");
-        
+        // console.log("ok");
       })
       .catch((error) => alert(error.message));
   };

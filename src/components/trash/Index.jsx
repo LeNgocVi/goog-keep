@@ -53,7 +53,7 @@ const TrashIndex = ({ grid }) => {
   //     return unsub;
   //   }, []);
   return (
-    <div className="row">
+    <div className={grid}>
       {trash.map((trash, index) => (
         <Trash
           key={index}

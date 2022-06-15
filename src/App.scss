@@ -1,9 +1,23 @@
 @import 'styles/Variables.scss';
+// @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Tiro+Devanagari+Sanskrit&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
 
 body {
   padding-bottom: 70px;
   background-color: #202124;
-  padding-top: 70px;
+  padding-top: 68px;
+  // overflow: hidden
 }
 
 header {
@@ -38,20 +52,32 @@ header {
     li {
       a {
         display: flex;
-        width: 40px;
-        height: 40px;
-        background-color: #3a3b3cfa;
+        width: 48px;
+        height: 48px;
+        // background-color: #3a3b3cfa;
         align-items: center;
         line-height: 1;
+        // border-radius: 100%;
+        color: #9aa0a6;
+        justify-content: center;
+      }
+    }
+  }
+  .headerIcons{
+    li {
+      a:hover  {
+        width: 48px;
+        height: 48px;
+        background-color: #3a3b3cfa;
         border-radius: 100%;
         color: #e8eaed;
-        justify-content: center;
+        cursor: pointer;
       }
     }
   }
 
   .searchInput {
-    // max-width: 727px;
+    margin-left: -14px;
 
     span {
       position: absolute;
@@ -104,11 +130,11 @@ footer {
 
 .form {
   max-width: 600px;
-  margin: 35px auto;
+  margin: 28px auto 26px;
   background-color: #202124;
   box-shadow: 0px 30px 50px -40px #00000069;
-  padding: 5px;
-  border: 2px solid #3a3b3c;
+  padding: 3px;
+  border: 1px solid #5f6368;
   border-radius: 9px;
 
   .form-control {
@@ -148,26 +174,31 @@ footer {
 
 .noteWrapper {
   background-color: transparent;
+  width: 240px;
   padding: 15px;
+  margin: 8px;
   border-radius: 5px;
   box-shadow: 0px 24px 57px -24px #0000005c;
   color: #e8eaed;
-  margin-bottom: 35px;
-  border: 1px solid #3a3b3c;
+  // margin-bottom: 35px;
+  border: 1px solid #5f6368;
 
-  h3 {
-    font-size: 20px;
-  }
+  // h3 {
+  //   font-size: 20px;
+  // }
 
   &:hover {
     .actionButtons {
       opacity: 1;
     }
   }
+  p {
+    word-break: break-all;
+  }
 }
 
 .actionButtons {
-  text-align: right;
+  text-align: left;
   margin-top: 30px;
   margin-bottom: 0px;
   opacity: 0;
@@ -175,6 +206,11 @@ footer {
   margin: 0 5px;
 
   button {
+    // height: 35px;
+    // width: 35px;
+    // border-radius: 100%;
+    border: 5px solid #e8eaed;
+    background-color: rgba(154,160,166,0.157);
     padding: 0;
     margin: 0 5px;
     background-color: transparent;
@@ -233,9 +269,23 @@ button:focus {
   // margin-right: 15px;
   cursor: pointer;
 }
+.mobileMenu:hover {
+  border-radius: 100%;
+  background-color: #3a3b3cfa;
+}
 
 .sideBar.open {
-  width: 20vw;
+  // width: 19vw;
+  width: 280px;
+
+  li {
+    // background-color: #41331C;
+    text-decoration: none;
+  }
+}
+.sideBar:hover {
+  // width: 19vw;
+  width: 280px;
 
   li {
     // background-color: #41331C;
@@ -245,10 +295,16 @@ button:focus {
 
 .mainContent {
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 1496px;
+  margin: auto;
 }
 
 .mainContent.open {
-  padding-left: 20vw;
+  // padding-left: 20vw;
+  width: 1040px;
+  margin-left: 390px;
+  margin-right: 88px;
+  // padding-left: 200px;
 }
 
 .sideBar {
@@ -258,7 +314,7 @@ button:focus {
   height: 100%;
   top: 64px;
   left: 0;
-  padding: 15px 0;
+  padding: 8px 0;
   z-index: 9;
   overflow: hidden;
 
@@ -278,12 +334,13 @@ button:focus {
       align-items: center;
       // margin-bottom: 25px;
 
-      border-radius: 0 15px 15px 0;
-      padding: 10px;
+      border-radius: 0 25px 25px 0;
+      padding: 6.5px 9px;
 
       span.icon {
         width: 35px;
         height: 35px;
+        color: #9aa0a6;
         // background-color: #41331C;
         display: flex;
         align-items: center;
@@ -293,9 +350,30 @@ button:focus {
         margin-left: 10px;
         min-width: 35px;
       }
+      span.icon:hover {
+       
+        background-color: #41331C;
+        color: #fff;
+        border-radius: 100%;
+        
+      }
+      span.linkText{
+        margin-left: 2px;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: .01785714em;
+        font-family: "Google Sans",Roboto,Arial,sans-serif;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        
+      }
     }
   }
   }
+}
+.sideBar ul a li:hover{
+  background-color: #28292c;
 }
 
 .loader {
@@ -339,7 +417,7 @@ button:focus {
     margin: 0 auto;
   }
 
-  .noteWrapper h3,
+  
   .noteWrapper p {
     word-break: break-all;
   }
@@ -397,4 +475,44 @@ button:focus {
   .mainContent {
     margin-left: 50px;
   }
+}
+
+.grid-column{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  // margin: 16x;
+  // grid-template-columns: repeat( 5, minmax(250px, 1fr) );
+}
+.grid-column1{
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0px 100px;
+  .noteWrapper {
+    background-color: transparent;
+    width: 100%;
+    padding: 15px;
+    margin: 8px ;
+    border-radius: 5px;
+    box-shadow: 0px 24px 57px -24px #0000005c;
+    color: #e8eaed;
+    // margin-bottom: 35px;
+    border: 1px solid #5f6368;
+  
+    h3 {
+      font-size: 20px;
+    }
+  
+    &:hover {
+      .actionButtons {
+        opacity: 1;
+      }
+    }
+  }
+
+}
+
+.small-icon{
+  font-size: 1.1rem;
+  margin: 0px 12px;
+  color: #9aa0a6;
 }

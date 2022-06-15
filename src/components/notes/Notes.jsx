@@ -26,7 +26,7 @@ const Notes = ({ notes, grid }) => {
     <>
       <div className={grid}>
         <div className="noteWrapper">
-          <h3>{notes.title}</h3>
+          <p>{notes.title}</p>
           <p>{notes.content}</p>
           <div className="actionButtons">
             <button

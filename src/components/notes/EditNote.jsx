@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { auth, db } from "../../firebase";
 
 const EditNote = ({ notes }) => {
-  
   const dispatch = useDispatch();
   const closePopupRef = useRef();
   const [user, setUser] = useState([]);
@@ -20,7 +19,10 @@ const EditNote = ({ notes }) => {
   });
   async function UpdateNote(notes) {
     const action = updateNote(notes);
-    const actionResult = await dispatch(action);
+    const actionResult = await dispatch(action).then(() => {
+      document.getElementsByClassName("modal-backdrop")[0].click();
+      document.getElementsByClassName("modal-backdrop")[0].remove();
+    });
   }
 
   useEffect(() => {
@@ -74,6 +76,14 @@ const EditNote = ({ notes }) => {
                   data-mdb-dismiss="modal"
                 >
                   <SaveIcon />
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-dismiss="modal"
+                  style={{ marginLeft: "350px" }}
+                >
+                  Close
                 </button>
               </div>
             </form>

@@ -1,5 +1,8 @@
 import React, { useState, useRef } from "react";
 import AddIcon from "@material-ui/icons/Add";
+import ImageIcon from "@material-ui/icons/Image";
+import BrushIcon from "@material-ui/icons/Brush";
+import CheckBoxOutlinedIcon from "@material-ui/icons/CheckBoxOutlined";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { addNote } from "../../redux/noteSlice";
@@ -47,16 +50,46 @@ export default function CreateNoteForm({}) {
         id="createNoteForm"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="form-group">
+        <div
+          className="form-group"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <input
+            style={{
+              fontSize: "0.875rem",
+              fontWeight: "600",
+            }}
             autoComplete="off"
-            placeholder="Tạo tiêu đề ..."
+            placeholder="Tạo ghi chú...."
             className="form-control"
             type="text"
             name="title"
             onClick={() => setShow(true)}
             {...register("title", { required: "Please enter your title." })}
           />
+          <span class="material-icons-outlined " style={{ color: "#9aa0a6" }}>
+            check_box
+          </span>
+          <span
+            class="material-icons-outlined "
+            style={{ marginLeft: "32px", color: "#9aa0a6" }}
+          >
+            brush
+          </span>
+          <span
+            class="material-icons-outlined "
+            style={{
+              marginLeft: "32px",
+              marginRight: "18px",
+              color: "#9aa0a6",
+            }}
+          >
+            image
+          </span>
         </div>
         <div className={!show ? "d-none" : "form-group"}>
           <textarea
@@ -64,10 +97,35 @@ export default function CreateNoteForm({}) {
             placeholder="Tạo ghi chú"
             className="form-control"
             name="content"
+            style={{
+              paddingTop: "16px",
+              fontSize: "0.875rem",
+              fontWeight: "600",
+            }}
           />
-          <button type="submit" name="submit" className="addButton">
-            <AddIcon />
-          </button>
+          <div>
+            <span class="material-icons-outlined hover small-icon">
+              add_alert
+            </span>
+            <span class="material-icons-outlined hover small-icon">
+              person_add
+            </span>
+            <span class="material-icons-outlined hover small-icon">
+              palette
+            </span>
+            <span class="material-icons-outlined hover small-icon">image</span>
+            <span class="material-icons-outlined hover small-icon">
+              archive
+            </span>
+            <span class="material-icons-outlined hover small-icon">
+              more_vert
+            </span>
+            <span class="material-icons-outlined hover small-icon">undo</span>
+            <span class="material-icons-outlined hover small-icon">redo</span>
+            <button type="submit" name="submit" className="addButton">
+              <AddIcon />
+            </button>
+          </div>
         </div>
       </form>
     </div>

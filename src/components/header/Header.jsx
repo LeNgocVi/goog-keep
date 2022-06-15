@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import RefreshIcon from "@material-ui/icons/Refresh";
 import SettingsIcon from "@material-ui/icons/Settings";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import SearchIcon from "@material-ui/icons/Search";
 import ListIcon from "@material-ui/icons/List";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import AppsIcon from "@material-ui/icons/Apps";
 import MenuIcon from "@material-ui/icons/Menu";
+import ViewAgendaIcon from "@material-ui/icons/ViewAgenda";
 import { auth, db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 // import { filtersSlice } from "../../redux/filterSlice";
@@ -22,11 +24,11 @@ export default function Header({ handleClickMenuOpen, grid, setGrid }) {
     handleClickMenuOpen();
   };
   const handleGrid = () => {
-    setGrid("col-md-12");
+    setGrid("grid-column1");
   };
 
   const handleGridToggle = () => {
-    setGrid("col-md-3");
+    setGrid("grid-column");
   };
   let navigate = useNavigate();
   const handleSignOut = () => {
@@ -60,7 +62,7 @@ export default function Header({ handleClickMenuOpen, grid, setGrid }) {
             </div>
           </div>
           <div
-            className="col-md-8 searchInput col-sm-8 col-7"
+            className="col-md-7 searchInput col-sm-7 col-7"
             style={{ minHeight: "46px" }}
           >
             <span style={{ paddingLeft: "5px" }}>
@@ -73,26 +75,36 @@ export default function Header({ handleClickMenuOpen, grid, setGrid }) {
               // name="searchNote"
               value={serchText}
               onChange={handleSearchTextChange}
-              style={{ minHeight: "46px", paddingLeft: "55px" }}
+              style={{
+                minHeight: "46px",
+                paddingLeft: "55px",
+                minWidth: "720px",
+              }}
             />
           </div>
-          <div className="col-md-2 d-none-sm">
+          <div
+            className="col-md-2 text-right d-none-sm"
+            style={{ padding: "0px" }}
+          >
             <ul className="headerIcons headerIcons list-style-none d-inline-block m-0 p-0">
-              <li className="list-style-none d-inline-block ml-3">
+              <li
+                className="list-style-none d-inline-block "
+                style={{ paddingLeft: "80px" }}
+              >
                 <a href="#">
                   <RefreshIcon />
                 </a>
               </li>
-              <li className="list-style-none d-inline-block ml-3">
-                {grid == "col-md-3" ? (
+              <li className="list-style-none d-inline-block ">
+                {grid == "grid-column" ? (
                   <a href="#" className="listIcon" onClick={handleGrid}>
-                    <ListIcon />
+                    <ViewAgendaIcon />
                   </a>
                 ) : (
                   ""
                 )}
 
-                {grid == "col-md-12" ? (
+                {grid == "grid-column1" ? (
                   <a href="#" className="listIcon" onClick={handleGridToggle}>
                     <AppsIcon />
                   </a>
@@ -100,21 +112,35 @@ export default function Header({ handleClickMenuOpen, grid, setGrid }) {
                   ""
                 )}
               </li>
-              <li className="list-style-none d-inline-block ml-3">
+              <li className="list-style-none d-inline-block ">
                 <a href="#">
-                  <AccountCircleIcon />
-                </a>
-              </li>
-              <li className="list-style-none d-inline-block ml-3">
-                <a onClick={handleSignOut}>
-                  <AppsIcon />
+                  {/* <SettingsIcon /> */}
+                  <span class="material-icons-outlined hover">settings</span>
                 </a>
               </li>
             </ul>
           </div>
-          {/* <div className="col-md-2 text-right d-none-sm">
-            <ul className="headerIcons headerIcons list-style-none d-inline-block m-0 p-0"></ul>
-          </div> */}
+          <div
+            className="col-md-1 text-right d-none-sm"
+            style={{ padding: "0px" }}
+          >
+            <ul className="headerIcons headerIcons list-style-none d-inline-block m-0 p-0">
+              <li
+                className="list-style-none d-inline-block  "
+                // style={{ paddingLeft: "30px" }}
+              >
+                <a href="#">
+                  {/* <AccountCircleIcon /> */}
+                  <span class="material-icons-outlined hover">apps</span>
+                </a>
+              </li>
+              <li className="list-style-none d-inline-block ">
+                <a onClick={handleSignOut}>
+                  <ExitToAppIcon />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>

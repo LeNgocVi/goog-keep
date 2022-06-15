@@ -19,23 +19,12 @@ import {
 } from "react-router-dom";
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [grid, setGrid] = useState("col-md-3");
+  const [grid, setGrid] = useState("grid-column");
 
   const handleClickMenuOpen = () => {
     setMenuOpen(!menuOpen);
   };
-  // const dispatch = useDispatch();
 
-  // const photos = useSelector((state) => state.note.current);
-
-  // useEffect(() => {
-  //   const unsub = auth.onAuthStateChanged(async (user) => {
-  //     if (user) {
-  //     }
-  //   });
-
-  //   return unsub;
-  // }, []);
   return (
     <div>
       <Header
@@ -48,41 +37,48 @@ const Home = () => {
           <Link to={"/home/note"}>
             <li>
               <span className="icon">
-                <EmojiObjectsIcon />
+                {/* <EmojiObjectsIcon /> */}
+                <span class="material-icons-outlined hover active">
+                  lightbulb
+                </span>
               </span>
-              <span className="linkText">Notes</span>
+              <span className="linkText">Ghi chú</span>
             </li>
           </Link>
           <Link to={"/home/"}>
             <li>
               <span className="icon">
-                <NotificationsIcon />
+                {/* <NotificationsIcon /> */}
+                <span class="material-icons-outlined hover">notifications</span>
               </span>
-              <span className="linkText">Reminders</span>
+              <span className="linkText">Lời nhắc</span>
             </li>
           </Link>
           <Link to={"/home"}>
             <li>
               <span className="icon">
-                <EditIcon />
+                {/* <EditIcon /> */}
+                <span class="material-icons-outlined hover">edit</span>
               </span>
-              <span className="linkText">Edit </span>
+              <span className="linkText">Chỉnh sửa nhãn </span>
             </li>
           </Link>
           <Link to={"/home/archives"}>
             <li>
               <span className="icon">
-                <ArchiveIcon />
+                {/* <ArchiveIcon /> */}
+                <span class="material-icons-outlined hover">archive</span>
               </span>
-              <span className="linkText">Archives</span>
+              <span className="linkText">Lưu trữ</span>
             </li>
           </Link>
           <Link to={"/home/trash"}>
             <li>
               <span className="icon">
                 <DeleteOutlineIcon />
+                {/* <span class="material-icons-outlined hover">delete</span> */}
               </span>
-              <span className="linkText">Trash</span>
+              <span className="linkText">Thùng rác</span>
             </li>
           </Link>
         </ul>

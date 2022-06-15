@@ -12,7 +12,7 @@ const Index = ({ grid }) => {
   const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
 
-  const photos = useSelector(noteSelector);
+  const notes = useSelector(noteSelector);
   //   const photos = useSelector(notesRemainingSelector);
   useEffect(() => {
     // console.log(grid);
@@ -36,7 +36,7 @@ const Index = ({ grid }) => {
   }, []);
 
   return (
-    <div className="row">
+    <div className={grid}>
       {isLoading ? (
         <h3 className="col-md-12 text-white text-center">
           <AutorenewIcon className="loader" />
@@ -45,7 +45,7 @@ const Index = ({ grid }) => {
         ""
       )}
       {!isLoading &&
-        photos.map((note, index) => (
+        notes.map((note, index) => (
           <Notes key={index} notes={note} grid={grid} />
         ))}
     </div>

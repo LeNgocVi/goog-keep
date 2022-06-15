@@ -2,12 +2,7 @@ import { auth, db } from "../firebase";
 
 const noteApi = {
   getNote: () => {
-    // TODO: Call API to get current user
     return new Promise((resolve, reject) => {
-      // reject(new Error('MY CUSTOM ERROR'));
-      // return;
-
-      // Wait 500ms --> return result
       setTimeout(() => {
         const currentUser = auth.currentUser;
         var a = [];
@@ -29,12 +24,7 @@ const noteApi = {
     });
   },
   addNote: (newNote) => {
-    // TODO: Call API to get current user
     return new Promise((resolve, reject) => {
-      // reject(new Error('MY CUSTOM ERROR'));
-      // return;
-
-      // Wait 500ms --> return result
       setTimeout(() => {
         const currentUser = auth.currentUser;
         var a = [];
@@ -64,12 +54,7 @@ const noteApi = {
   },
 
   RehibiliTrash: (newTrash) => {
-    // TODO: Call API to get current user
     return new Promise((resolve, reject) => {
-      // reject(new Error('MY CUSTOM ERROR'));
-      // return;
-
-      // Wait 500ms --> return result
       setTimeout(() => {
         const currentUser = auth.currentUser;
         var a = [];
@@ -101,12 +86,7 @@ const noteApi = {
     });
   },
   updateNote: (note) => {
-    // TODO: Call API to get current user
     return new Promise((resolve, reject) => {
-      // reject(new Error('MY CUSTOM ERROR'));
-      // return;
-
-      // Wait 500ms --> return result
       setTimeout(() => {
         console.log("note", note.id);
         const currentUser = auth.currentUser;
@@ -138,12 +118,7 @@ const noteApi = {
   },
 
   deleteNote: (Note) => {
-    // TODO: Call API to get current user
     return new Promise((resolve, reject) => {
-      // reject(new Error('MY CUSTOM ERROR'));
-      // return;
-
-      // Wait 500ms --> return result
       setTimeout(() => {
         const currentUser = auth.currentUser;
         var a = [];
